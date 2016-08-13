@@ -16,6 +16,11 @@
 ```
 git remote add seed https://github.com/elielagmay/docker-django-react-seed.git
 git pull seed master
+```
+
+Edit the environement variables in `env/dev` then build and start the docker containers:
+
+```
 ./bin/develop
 ```
 
