@@ -1,0 +1,9 @@
+instrumentation:
+    root: src
+    include-all-sources: true
+
+reporting:
+    print: summary
+    reports:
+        - html
+    dir: ./coverage

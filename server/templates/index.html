@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if WEBPACK_DIST_ASSETS %}
+        <link rel="stylesheet" href="{% static WEBPACK_DIST_ASSETS.css %}">
+    {% endif %}
+</head>
+<body>
+    <div id="root">
+        <span style="color:#EEE;font-size:12px">#</span>
+    </div>
+
+    {% if WEBPACK_DEV_BUNDLE %}
+        <script src="{{ WEBPACK_DEV_BUNDLE }}"></script>
+    {% endif %}
+    {% if WEBPACK_DIST_ASSETS %}
+        <script src="{% static WEBPACK_DIST_ASSETS.js %}"></script>
+    {% endif %}
+</body>
+</html>

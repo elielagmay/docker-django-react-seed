@@ -1,0 +1,99 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css')
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700')
+
+$fontFamily = Roboto, sans-serif
+
+$font0 = 11px
+$font1 = 12px
+$font2 = 14px
+$font3 = 15px
+$font4 = 17px
+$font5 = 19px
+$font6 = 21px
+$font7 = 25px
+$font8 = 29px
+$font9 = 32px
+
+$black = #000000
+$white = #FFFFFF
+
+$gray0 = #F9F9F9
+$gray1 = #EEEEEE
+$gray2 = #CCCCCC
+$gray3 = #999999
+$gray4 = #787878
+$gray5 = #666666
+$gray6 = #505050
+$gray7 = #333333
+$gray8 = #222222
+$gray9 = #111111
+
+$red0 = #FFEBEE
+$red1 = #FFCDD2
+$red2 = #EF9A9A
+$red3 = #E57373
+$red4 = #EF5350
+$red5 = #F44336
+$red6 = #E53935
+$red7 = #D32F2F
+$red8 = #C62828
+$red9 = #B71C1C
+
+$blue0 = #E3F2FD
+$blue1 = #BBDEFB
+$blue2 = #90CAF9
+$blue3 = #64B5F6
+$blue4 = #42A5F5
+$blue5 = #2196F3
+$blue6 = #1E88E5
+$blue7 = #1976D2
+$blue8 = #1565C0
+$blue9 = #0D47A1
+
+$green0 = #E8F5E9
+$green1 = #C8E6C9
+$green2 = #A5D6A7
+$green3 = #81C784
+$green4 = #66BB6A
+$green5 = #4CAF50
+$green6 = #43A047
+$green7 = #388E3C
+$green8 = #2E7D32
+$green9 = #1B5E20
+
+$zIndexBase = 100
+$zIndexPopup = 1100
+$zIndexPopupBK = $zindex-popup - $zindex-base
+$zIndexPopupFW = $zindex-popup + $zindex-base
+
+placeholderColor($color)
+    &::-webkit-input-placeholder
+        color $color !important
+    &:-moz-placeholder
+        color $color !important
+    &::-moz-placeholder
+        color $color !important
+    &:-ms-input-placeholder
+        color $color !important
+
+scrollbar($size = 8px, $bg = $white, $color = $gray2)
+    &::-webkit-scrollbar
+        background $bg
+        height $size
+        width $size
+
+    &::-webkit-scrollbar-thumb
+        background $color
+        border $size * 0.25 $bg solid
+        border-radius $size
+
+scrollbarColor($color)
+    &::-webkit-scrollbar-thumb
+        background $color
+
+scrollbarBackground($bg)
+    &::-webkit-scrollbar
+        background $bg
+
+    &::-webkit-scrollbar-thumb
+        border-color $bg

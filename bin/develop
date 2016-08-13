@@ -1,0 +1,31 @@
+#!/bin/bash
+
+docker-compose up -d postgres client
+
+# wait for postgres to initialize before migrating
+for i in {30..0}; do
+    if [ $(docker-compose logs postgres 2>&1 | grep "database system is ready to accept connections" | wc -l) -gt 1 ]; then
+        echo "Postgres is ready."
+        echo "Migrating Django models..."
+        docker-compose up -d server
+        docker-compose exec server python manage.py migrate
+        break
+    else
+        sleep 1
+    fi
+    if [ "$i" = 0 ]; then
+        echo "Migration failed."
+    fi
+done
+
+for j in {30..0}; do
+    if [ $(docker-compose logs client 2>&1 | grep "webpack dev server listening" | wc -l) -gt 0 ]; then
+        echo "Webpack dev server is ready."
+        break
+    else
+        sleep 5
+    fi
+    if [ "$j" = 0 ]; then
+        echo "Webpack dev server did not initiatilize."
+    fi
+done
