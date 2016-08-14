@@ -1,6 +1,6 @@
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from reversion.admin import VersionAdmin
-from ..admin import admin_site
+from django.contrib import admin
 from . import models
 
 
@@ -35,4 +35,4 @@ class UserAdmin(VersionAdmin, BaseUserAdmin):
     )
 
 
-admin_site.register(models.User, UserAdmin)
+admin.site.register(models.User, UserAdmin)
