@@ -11,14 +11,19 @@
 * Mocha + Chai for js testing
 * Pytest for python testing
 
-### Setup
+### Setup and customize
 
 ```
 git remote add seed https://github.com/elielagmay/docker-django-react-seed.git
 git pull seed master
+cp server/web/settings/local.py.example server/web/settings/local.py
 ```
 
-Edit the environement variables in `env/dev` then build and start the docker containers:
+1. Edit the environement variables in `env/dev`
+2. Add additional Django settings in `server/web/settings/local.py`
+3. Update the Django User model in `server/api/account/models.py`
+
+Finally, build and start the docker containers:
 
 ```
 ./bin/develop
