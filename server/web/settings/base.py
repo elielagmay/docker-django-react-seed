@@ -114,6 +114,5 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'rest_framework.filters.DjangoFilterBackend',
     ),
-    'DEFAULT_PAGINATION_CLASS': 'api.pagination.StandardResultsSetPagination',
     'DATETIME_FORMAT': '%Y-%m-%dT%H:%M:%S%z',
 }
