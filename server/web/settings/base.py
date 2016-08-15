@@ -32,9 +32,6 @@ INSTALLED_APPS = [
 
     'reversion',
     'rest_framework',
-
-    'api',
-    'api.account',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -72,7 +69,6 @@ TEMPLATES = [
 
 ROOT_URLCONF = 'web.urls'
 WSGI_APPLICATION = 'web.wsgi.application'
-AUTH_USER_MODEL = 'account.User'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
